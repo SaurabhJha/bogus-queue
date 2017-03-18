@@ -1,7 +1,7 @@
 CC=cc
 CFLAGS=-ggdb3 -c -Wall -std=c11
 LDFLAGS=-pthread
-SOURCES=main.c queue.c thread_routines.c
+SOURCES=main.c queue.c thread_routines.c daemon.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=executable
 
