@@ -8,20 +8,19 @@
 
 int main()
 {
-    make_daemon();
+    /* TODO: Make syslog work and enable it. */
+    /*make_daemon();*/
 
     pthread_t producer_thread_ids[MAX_PRODUCER_THREADS];
     pthread_t consumer_thread_ids[MAX_CONSUMER_THREADS];
 
     /* 100 integers. We will calculate fibonacci number of these integers. */
-    int shared_data[100] = {13, 97, 98, 15, 12, 43, 87, 8, 98, 70, 79, 82, 36,
-                            83, 73, 58, 6, 57, 79, 23, 5, 90, 70, 66, 72, 18,
-                            97, 8, 31, 22, 46, 4, 23, 33, 72, 65, 10, 50, 10,
-                            41, 33, 96, 38, 24, 22, 89, 8, 34, 87, 13, 54, 5,
-                            15, 87, 35, 79, 47, 44, 12, 5, 96, 84, 50, 47, 54,
-                            5, 53, 15, 8, 65, 48, 61, 69, 78, 82, 27, 78, 71, 2,
-                            90, 82, 87, 57, 54, 86, 42, 62, 60, 54, 48, 75, 45,
-                            9, 16, 56, 84, 31, 26, 75, 87};
+    int shared_data[100] = {3, 7, 8, 5, 2, 3, 7, 8, 8, 0, 9, 2, 6, 3, 3, 8, 6,
+                            7, 9, 3, 5, 0, 0, 6, 2, 8, 7, 8, 1, 2, 6, 4, 3, 3,
+                            2, 5, 0, 0, 0, 1, 3, 6, 8, 4, 2, 9, 8, 4, 7, 3, 4,
+                            5, 5, 7, 5, 9, 7, 4, 2, 5, 6, 4, 0, 7, 4, 5, 3, 5,
+                            8, 5, 8, 1, 9, 8, 2, 7, 8, 1, 2, 0, 2, 7, 7, 4, 6,
+                            2, 2, 0, 4, 8, 5, 5, 9, 6, 6, 4, 1, 6, 5, 7};
 
     shared_queue = initialize_queue(QUEUE_SIZE);
 
